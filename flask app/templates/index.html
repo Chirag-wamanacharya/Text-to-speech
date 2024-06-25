@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Text to Speech</h1>
+        <div class="input-section">
+            <label for="text_input">Enter Text:</label>
+            <input type="text" id="text_input">
+            <button id="generateAudioButton">Generate Audio</button>
+        </div>
+
+        <div id="audio_list">
+            <h2>Generated Audios:</h2>
+            <ul id="audio_list_items"></ul>
+        </div>
+
+        <div id="message" style="display: none;"></div>
+    </div>
+
+    <!-- Modal for entering file name -->
+    <div id="fileNameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter File Name</h2>
+            <input type="text" id="file_name_input" placeholder="Enter file name">
+            <button class="generateA" onclick="generateAudio()">Generate</button>
+        </div>
+    </div>
+</body>
+</html>
